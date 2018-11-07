@@ -12,3 +12,4 @@ import ajax from '@util/axios'
 Vue.use(VueAwesomeSwiper)
 
 Vue.prototype.$http = ajax
+

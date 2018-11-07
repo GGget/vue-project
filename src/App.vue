@@ -1,20 +1,21 @@
 <template>
   <div id="app">
-      <!-- <app-header></app-header> -->
+      <app-header></app-header>
       <app-home></app-home>
-      
+      <!--<footer></footer> -->
+      <!-- <app-mq></app-mq> -->
   </div>
 </template>
 
 <script>
-// import AppHeader from '@c/layout/AppHeader'
+import AppHeader from '@c/layout/AppHeader'
 import AppHome from '@pages/home/AppHome'
 
 export default {
   name: 'app',
   components: {
     AppHome,
-    // AppHeader
+    AppHeader
   }
 }
 </script>
