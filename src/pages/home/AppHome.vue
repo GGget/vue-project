@@ -1,29 +1,37 @@
 <template>
     <section class="app-home">
         <app-home-banner></app-home-banner>
-        <app-home-film-box
-            v-for = "type in box_types"
-            :key  = "type.id"
-            :type = "type"
-        ></app-home-film-box>
-        </section>
+        <app-home-box :info = "options[0]"></app-home-box>
+        <app-home-box :info = "options[1]"></app-home-box>
+        <app-home-consultation></app-home-consultation>
+        <app-home-video-box :info = "options[2]"></app-home-video-box>
+        <app-line-block></app-line-block>
+        <app-home-tip></app-home-tip>
+    </section>
 </template>
 
 <script>
 import AppHomeBanner from '@c/common/app-home/AppHomeBanner'
-import AppHomeFilmBox from '@c/common/app-home/AppHomeFilmBox'
+import AppHomeBox from '@c/common/app-home/AppHomeBox'
+import AppHomeConsultation from '@c/common/app-home/AppHomeConsultation'
+import AppHomeVideoBox from '@c/common/app-home/AppHomeVideoBox'
+import AppLineBlock from '@c/common/app-home/AppLineBlock'
+import AppHomeTip from '@c/common/app-home/AppHomeTip'
+
+
 export default {
-    data () {
+    data(){
         return {
-            box_types: [
-                { id: 1, url: 'now-playing', title: '热映',  },
-                { id: 2, url: 'coming-soon', title: '即将上映', count: 3 }
-            ]
+            options:[0,1,2]
         }
     },
     components: {
         AppHomeBanner,
-        AppHomeFilmBox
+        AppHomeBox,
+        AppHomeConsultation,
+        AppLineBlock,
+        AppHomeVideoBox,
+        AppHomeTip
     }
 }
 </script>

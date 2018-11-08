@@ -13,13 +13,14 @@ module.exports = {
     devServer: {
       // port: 8000,
       proxy: {
-        '/mz': {
-          target: 'https://m.maizuo.com/',
+        '/yxhj': {
+          target: 'https://m.uhomes.com/',
           changeOrigin: true,
           pathRewrite: {
-            '^/mz': ''
+            '^/yxhj': ''
           }
-        }
+        },
+        
       }
     },
     chainWebpack  (config)  {

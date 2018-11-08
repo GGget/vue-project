@@ -11,7 +11,7 @@ import '@libs'
 
 Vue.config.productionTip = false
 
-import router from "./router"
+// import router from "./router"
 
 //根实例
 new Vue({

@@ -43,6 +43,17 @@ table {
  
 input, select {
     vertical-align:middle;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 13.3333px Arial;
 }
 
 /*css为clearfix，清除浮动*/
@@ -58,4 +69,26 @@ input, select {
 .clearfix:after{clear:both;} 
 .clearfix{ 
     *zoom:1;/*IE/7/6*/
+}
+button{
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    border: 0;
+    border-radius: 2px;
+}
+input::-webkit-input-placeholder{
+    color:#ccc;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#ccc;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#ccc;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+    color:#ccc;
 }
