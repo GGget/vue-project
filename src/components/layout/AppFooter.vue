@@ -26,7 +26,7 @@
                         <option value="tr">Türkçe</option>
                         <option value="br">Português</option>
                         <option value="it">Italiano</option>
-                    </select><i class="iconfont icon-xialajiantoushixin footer-zhankaix_huaban"></i>
+                    </select><i class="fa fa-lg fa-sort-desc"></i>
                 </div>
                 <div class="footer-tel">客服电话</div>
             </div>
@@ -138,17 +138,23 @@
                         font-size: .373333rem;
                         color: #666;
                         padding-left: .533333rem;
+                        background-color:#fff;
                         display: block;
                         -ms-flex: 1;
                         flex: 1;
                         border-radius: .08rem;
+                        appearance: none;
+                        -moz-appearance: none;
+                        -webkit-appearance: none;
                     }
                     i{
+                        font-size:.58rem;
                         display: block;
                         width: .4rem;
-                        padding: .4rem 0 0;
+                        padding: .3rem 0 0;
                         position: absolute;
                         right: .266667rem;
+                        color:#666;
                     }
                 }
                 .footer-tel{

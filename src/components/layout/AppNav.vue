@@ -10,21 +10,21 @@
                 <i  class="fa fa-close fa-lg close"  @click="$emit('update:menushow', false)"></i>
                 <ul class="nav-content">
                     <li class="split-line"></li>
-                    <li v-for = 'nav in navs_top' :key = 'nav.id' class="nav-item">
+                    <router-link v-for = 'nav in navs_top' :key = 'nav.id'  @click.native="$emit('update:menushow', false)" tag="li" :to = "nav.path" class="nav-item">
                         <a href="">
                             <i class="fa fa-lg" :class="nav.icon" style="line-height:0px"></i> 
                             <span>{{nav.title}}</span>
                             <span v-if ='nav.hint' class="hint">{{nav.hint}}</span>
                         </a>
-                    </li>
+                    </router-link>
                     <li class="split-line"></li>
-                    <li v-for = 'nav in navs_bottom' :key = 'nav.id' class="nav-item">
+                    <router-link v-for = 'nav in navs_bottom' :key = 'nav.id' @click.native="$emit('update:menushow', false)" tag="li" :to = "nav.path" class="nav-item">
                         <a href="">
                             <i class="fa fa-lg" :class="nav.icon" style="line-height:0px"></i> 
                             <span>{{nav.title}}</span>
                             <span v-if ='nav.hint' class="hint">{{nav.hint}}</span>
                         </a>
-                    </li>
+                    </router-link>
                 </ul>
             </nav>
         </transition>
@@ -36,9 +36,9 @@ export default {
     data () {
         return {
             navs_top:[
-                { id: 1, title: '首页', path: '/', icon:'fa-home'},            
-                { id: 2, title: '订单', path: '/', icon:'fa-user-o' },            
-                { id: 3, title: '财富', path: '/', icon:'fa-money' },            
+                { id: 1, title: '首页', path: '/home', icon:'fa-home'},            
+                { id: 2, title: '订单', path: '/not-found', icon:'fa-user-o' },            
+                { id: 3, title: '财富', path: '/buyhouse', icon:'fa-money' },            
                 { id: 4, title: '足迹', path: '/', icon:'fa-plane' },            
                 { id: 5, title: '收藏', path: '/', icon:'fa-heart-o' },
                

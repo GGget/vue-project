@@ -31,6 +31,10 @@ export default {
 <style lang="scss">
 // sass语法，不是webpack的东西，所以不能使用alias
 .app-header {
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:999;
   .header-content {
     width: 100%;
     height: 1.2rem;

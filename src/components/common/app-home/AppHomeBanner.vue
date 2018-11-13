@@ -61,5 +61,24 @@
     .app-home-swiper {
         height: 6.133333rem!important;
         padding-bottom: .133333rem;
+        .swiper-pagination{
+
+            .swiper-pagination-bullet{
+                background: #fff;
+                width: .16rem;
+                height: .16rem;
+                border-radius: 100%;
+                margin: 0 .133333rem!important;
+            }
+            .swiper-pagination-bullet-active{
+                    background: #fff!important;
+                    border-radius: 2.666667rem!important;
+                    width: .4rem!important;
+                    height: .16rem!important;
+            }
+        }
+        .swiper-pagination-bullets {
+            bottom:1rem!important;
+        }
     }
 </style>
