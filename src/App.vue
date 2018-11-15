@@ -2,10 +2,7 @@
   <div id="app">
       <app-header></app-header>
       <!-- <app-home></app-home> -->
-      
-        
-          <router-view></router-view>
-        
+      <router-view></router-view>
       
       <app-footer></app-footer> 
       <!-- <app-mq></app-mq> -->

@@ -10,7 +10,7 @@
                     v-for = "item in billboards "  :key  = "item.index">
                     
                     <div>
-                        <img :src="item.logo" lazy="loaded"></img>
+                        <img :src="item.logo" lazy="loaded"/>
                         <span class="video-switch">
                         <i class="fa fa-lg fa-play"></i>
                         </span>
@@ -49,7 +49,6 @@
         }).then(result => {
             this.billboards = result[this.info].list
             this.housetitle = result[this.info].title
-            console.log(this.info)
         })
     },
 

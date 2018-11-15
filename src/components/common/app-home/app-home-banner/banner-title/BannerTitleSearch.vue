@@ -19,7 +19,7 @@
 <style lang='scss'>
     .search-index{
         background: #fff;
-        box-shadow: 0 0 .266667rem 0 rgba(0,0,0,.2);
+        box-shadow: 0 0 .24rem 0 rgba(0,0,0,.2);
         border-radius: .08rem;
         width: 80%;
        

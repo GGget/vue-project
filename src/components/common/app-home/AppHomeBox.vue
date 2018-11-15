@@ -1,7 +1,8 @@
 <template>
     <div class="hot-house">
         <div class="hot-house-title" >
-            <p class="hot-title">{{housetitle}}</p><a class="hot-more">更多<i class="fa fa-lg fa-angle-right"></i></a>
+            <p class="hot-title" v-show="housetitle.length">{{housetitle}}</p>
+            <a class="hot-more">更多<i class="fa fa-lg fa-angle-right"></i></a>
             <!---->
         </div>
         <swiper class="swiper-container-house"  v-if = "billboards.length" :options="swiperOption" ref="mySwiper">
@@ -45,9 +46,10 @@
             url: '/yxhj/index.php/wechatapp/region/index?src=webapp',
             react: false
         }).then(result => {
+            console.log(result)
             this.billboards = result[this.info].list
             this.housetitle = result[this.info].title
-            console.log(this.info)
+            localStorage.setItem('home_data',result)
         })
     },
 
