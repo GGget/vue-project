@@ -96,10 +96,9 @@ export default {
                     .title{
                         line-height: .8rem;
                         color: #313131;
-                        // font-size: .373333rem
                     }
                     .abstract{
-                        // font-size: .32rem
+                        font-size: .32rem
                     }
                 }
             }
