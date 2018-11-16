@@ -1,5 +1,5 @@
 <template>
-    <div class="hot-house">
+    <div class="hot-house"  v-show="housetitle.length">
         <div class="hot-house-title" >
             <p class="hot-title">{{housetitle}}</p><a class="hot-more">更多<i class="fa fa-lg fa-angle-right"></i></a>
             <!---->

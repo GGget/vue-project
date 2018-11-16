@@ -9,6 +9,7 @@ Vue.use(VueRouter)
 import AppHome from '@pages/home/AppHome'
 import AppBuyhouse from '@pages/buyhouse/AppBuyhouse'
 import AppNotFound from '@pages/not-found/AppNotFound'
+import  AppApartments from '@pages/apartments/AppApartments'
 
 //路由表
 const routes = [
@@ -30,6 +31,11 @@ const routes = [
         path:"/not-found",
         name: 'not-found',
         component: AppNotFound
+    },
+    {   
+        path:"/apartments/:hid",
+        name: 'apartments',
+        component: AppApartments
     },
     {
         path: '**',

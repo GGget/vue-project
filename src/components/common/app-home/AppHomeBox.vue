@@ -1,26 +1,43 @@
 <template>
-    <div class="hot-house">
+    <div class="hot-house" v-show="housetitle.length">
         <div class="hot-house-title" >
             <p class="hot-title">{{housetitle}}</p><a class="hot-more">更多<i class="fa fa-lg fa-angle-right"></i></a>
             <!---->
         </div>
         <swiper class="swiper-container-house"  v-if = "billboards.length" :options="swiperOption" ref="mySwiper">
         
-                <swiper-slide class="swiper-slide " style="margin-right: .266667rem;"
-                    v-for = "item in billboards "  :key  = "item.index">
+                <swiper-slide
+                    class="swiper-slide " style="margin-right: .266667rem;"
+                    v-for = "item in billboards "  :key  = "item.index" >
                     
-                    <a :href="item.englishcountry+'/'+item.regoin_unique_name+'/apartments/'+item.id">
-                        <img alt="" :src="item.thumburl">
+                    <a >
+                        <img  @click="idUrl" :id='item.id' alt="" :src="item.thumburl">
                     </a>
-                    <!---->
+                    
                     <p class="hot-housetitl"><span class="spanB">{{item.chinesecity}}</span><span style="font-family: PingFangSC-Regular;">{{item.title}}</span>
                     </p>
                     <p class="hot-houseprice" v-html="item.price_string">{{item.price_string}}</p>
-                    <!---->
+                
                 </swiper-slide>
             
+            <!--
+            <swiper-slide
+                    class="swiper-slide " style="margin-right: .266667rem;"
+                    v-for = "item in billboards "  :key  = "item.index" >
+                    
+                    <a>
+                        <img @click='addUrl' :id='item.id' alt="" :src="item.thumburl">
+                    </a>
+                    
+                    
+                    <p class="hot-housetitl"><span class="spanB">{{item.chinesecity}}</span><span style="font-family: PingFangSC-Regular;">{{item.title}}</span>
+                    </p>
+                    <p class="hot-houseprice" v-html="item.price_string">{{item.price_string}}</p>
+                    
+                </swiper-slide>
+                -->
         </swiper>
-        <div class="index-line"></div>
+        <div  class="index-line"></div>
     </div>
 </template>
 
@@ -29,16 +46,17 @@
     export default {
         props:['info'],
         data() {
-      return {
-        swiperOption: {
-          slidesPerView: 'auto',
-          spaceBetween: 20,
-          loop: false, 
-          autoplay: false
-        },
-        billboards: [],
-        housetitle:[]
-      }
+            return {
+                url:"/apartments/:id",
+                swiperOption: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 20,
+                    loop: false, 
+                    autoplay: false
+                },
+                billboards: [],
+                housetitle:[]
+            }
     },
     beforeCreate () {
         this.$http({
@@ -47,21 +65,37 @@
         }).then(result => {
             this.billboards = result[this.info].list
             this.housetitle = result[this.info].title
-            console.log(this.info)
+            // console.log(this.info)
         })
     },
+    methods:{
+        idUrl(e){
+            const _id=e.target.id
+            // console.log(e.target.getAttribute("data_id"))
+            this.$router.push({
+                name:'apartments',
+                params:{hid:_id}
+            })
+            // this.url+=e.target.id
+            //  console.log(this.$route)
+            // console.log(this.$route.params)
+            // console.log(this.$route.params.id)
+            // console.log(_id)
 
-    computed: {
-      swiper () {
-        return this.$refs.mySwiper.swiper
-      }
-    }, 
-    mounted() {
-        // current swiper instance
-        // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
-        //   console.log('this is current swiper instance object', this.swiper)
-        //   this.swiper.slideTo(3, 1000, false)
-    }
+        }
+    },
+    // computed: {
+    //   swiper () {
+    //     return this.$refs.mySwiper.swiper
+    //   }
+    // }, 
+    // mounted() {
+    //     this.addUrl(e)
+    //     // current swiper instance
+    //     // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
+    //     //   console.log('this is current swiper instance object', this.swiper)
+    //     //   this.swiper.slideTo(3, 1000, false)
+    // }
     }
 </script>
 <style lang='scss'>
@@ -81,6 +115,7 @@
                 font-size: .373333rem;
                 color: #666;
                 margin-right: .4rem;
+                line-height:.72rem;
             }
         }
         .swiper-container-house {
