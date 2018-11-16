@@ -17,8 +17,8 @@
                         {{tab.title}}
                     </router-link>
                 </ul>
+                <router-view></router-view>
             </div>
-            <router-view></router-view>
         </section>
         
     </div>
@@ -41,7 +41,9 @@ export default {
         if(localStorage.getItem('MEIQIA_EXTRA_TRACK_ID')){
             this.$emit('update:allClose', false)
         }
-    }
+    },
+
+
 }
 </script>
 <style lang="scss">

@@ -11,6 +11,8 @@ import AppBuyhouse from '@pages/buyhouse/AppBuyhouse'
 import AppNotFound from '@pages/not-found/AppNotFound'
 import AppOrder from '@pages/order/AppOrder'
 import AppFootmark from '@pages/footmark/AppFootmark'
+import AppUhomesTv from '@pages/uhomes-tv/AppUhomesTv'
+import AppUhomesVideo from '@pages/uhomes-video/AppUhomesVideo'
 
 import AppWealth from '@pages/wealth/AppWealth'
     //二级路由
@@ -76,11 +78,22 @@ const routes = [
                 component:AppLike 
             },
             {
-                path:'comment',
+                path:'comment', 
                 name:'comment',
                 component:AppComment
-            }
+            } 
         ]
+    },
+    {
+        path: '/uhomes-tv',
+        name: 'uhomes-tv',
+        component: AppUhomesTv
+    },
+    {
+        path: '/uhomes-video/:id',
+        name: 'uhomes-video',
+        component: AppUhomesVideo,
+        // props: true
     },
     {   
         path:"/not-found",

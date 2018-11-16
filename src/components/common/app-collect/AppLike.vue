@@ -16,7 +16,7 @@
             return {
                 isHaveLike:false
             }
-        }
+        },
     }
 
 </script>

@@ -1,8 +1,14 @@
 <template>
     <div class="hot-house">
         <div class="hot-house-title" >
-            <p class="hot-title">{{housetitle}}</p><a class="hot-more">更多<i class="fa fa-lg fa-angle-right"></i></a>
-            <!---->
+            <p class="hot-title">{{housetitle}}</p>
+            <router-link 
+                tag="a"
+                class="hot-more"
+                to="/uhomes-tv"
+            >
+                更多<i class="fa fa-lg fa-angle-right"></i>
+            </router-link>
         </div>
         <swiper class="swiper-container-house"  v-if = "billboards.length" :options="swiperOption" ref="mySwiper">
         

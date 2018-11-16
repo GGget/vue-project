@@ -52,7 +52,7 @@ export default {
                
             ],
             navs_bottom:[
-                { id: 7, title: '发布房源', path: '/release', icon:'fa-institution' },            
+                { id: 7, title: '发布房源', path: '/uhomes-video', icon:'fa-institution' },            
                 { id: 8, title: '公寓申请', path: '/apply', icon:'fa-edit' },            
                 { id: 9, title: '下载app', path: '/downloda', icon:'fa-download', hint:'优惠便捷'},            
                 { id: 10, title: '关注微信', path: '/wechat', icon:'fa-wechat', hint:'随时沟通'},            

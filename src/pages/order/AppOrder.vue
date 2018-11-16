@@ -11,6 +11,11 @@ import AppOrderList from '@c/common/app-order/AppOrderList'
 
 
 export default {
+    props:['closeFooter'],
+    created() {
+        //这个界面需要footer 组件 所以修改为true
+        this.$emit('update:closeFooter', true)
+    },
     data(){
         return {
             isClose:true

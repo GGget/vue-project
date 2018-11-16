@@ -50,6 +50,8 @@ export default {
               case 'wealth': return '我的财富';
               case 'footmark': return '足迹';
               case 'collect': return '我的收藏';
+              case 'uhomes-tv': return 'UHOMES TV';
+              case 'uhomes-video': return 'UHOMES TV';
               default: return '';
           }
       },

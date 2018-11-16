@@ -46,7 +46,6 @@
             url: '/yxhj/index.php/wechatapp/region/index?src=webapp',
             react: false
         }).then(result => {
-            console.log(result)
             this.billboards = result[this.info].list
             this.housetitle = result[this.info].title
             localStorage.setItem('home_data',result)
