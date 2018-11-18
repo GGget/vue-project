@@ -20,6 +20,11 @@ import AppHomeTip from '@c/common/app-home/AppHomeTip'
 
 
 export default {
+    props:['closeFooter'],
+    created() {
+        //这个界面不需要footer 
+        this.$emit('update:closeFooter', true)
+    },
     data(){
         return {
             options:[0,1,2]
@@ -37,7 +42,5 @@ export default {
 </script>
 
 <style lang="scss" >
-    .app-home-banner {
-
-    }
+    
 </style>

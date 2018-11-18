@@ -10,19 +10,36 @@
                 <i  class="fa fa-close fa-lg close"  @click="$emit('update:menushow', false)"></i>
                 <ul class="nav-content">
                     <li class="split-line"></li>
+<<<<<<< HEAD
                     <router-link v-for = 'nav in navs_top' :key = 'nav.id'  @click.native="$emit('update:menushow', false)" tag="li" :to = "nav.path" class="nav-item">
                         
                             <i class="fa fa-lg" :class="nav.icon" style="line-height:0px"></i> 
                             <span>{{nav.title}}</span>
                             <span v-if ='nav.hint' class="hint">{{nav.hint}}</span>
+=======
+                    <router-link class="nav-item"
+                                 tag='li'
+                                 v-for = 'nav in navs_top' 
+                                 :key = 'nav.id'  
+                                 @click.native="$emit('update:menushow', false)"  
+                                 :to = 'nav.path' 
+                    >
+                        <i class="fa fa-lg" :class="nav.icon" style="line-height:0px"></i> 
+                        <span>{{nav.title}}</span>
+                        <span v-if ='nav.hint' class="hint">{{nav.hint}}</span>
+>>>>>>> f09fee855ecfede55234b316405c25080a20902d
                     </router-link>
                     <li class="split-line"></li>
-                    <router-link v-for = 'nav in navs_bottom' :key = 'nav.id' @click.native="$emit('update:menushow', false)" tag="li" :to = "nav.path" class="nav-item">
-                        <a href="">
-                            <i class="fa fa-lg" :class="nav.icon" style="line-height:0px"></i> 
-                            <span>{{nav.title}}</span>
-                            <span v-if ='nav.hint' class="hint">{{nav.hint}}</span>
-                        </a>
+                    <router-link class="nav-item" 
+                                tag="li" 
+                                v-for = 'nav in navs_bottom' 
+                                :key = 'nav.id' 
+                                @click.native="$emit('update:menushow', false)" 
+                                :to = "nav.path" 
+                    >
+                        <i class="fa fa-lg" :class="nav.icon" style="line-height:0px"></i> 
+                        <span>{{nav.title}}</span>
+                        <span v-if ='nav.hint' class="hint">{{nav.hint}}</span>
                     </router-link>
                 </ul>
             </nav>
@@ -36,18 +53,25 @@ export default {
         return {
             navs_top:[
                 { id: 1, title: '首页', path: '/home', icon:'fa-home'},            
+<<<<<<< HEAD
                 { id: 2, title: '订单', path: '/not-found', icon:'fa-user-o' },            
                 { id: 3, title: '财富', path: '/buyhouse', icon:'fa-money' },            
                 { id: 4, title: '足迹', path: '/apartments', icon:'fa-plane' },            
                 { id: 5, title: '收藏', path: '/', icon:'fa-heart-o' },
+=======
+                { id: 2, title: '订单', path: '/order', icon:'fa-user-o' },            
+                { id: 3, title: '财富', path: '/wealth', icon:'fa-money' },            
+                { id: 4, title: '足迹', path: '/footmark', icon:'fa-plane' },            
+                { id: 5, title: '收藏', path: '/collect', icon:'fa-heart-o' },
+>>>>>>> f09fee855ecfede55234b316405c25080a20902d
                
             ],
             navs_bottom:[
-                { id: 7, title: '发布房源', path: '/', icon:'fa-institution' },            
-                { id: 8, title: '公寓申请', path: '/', icon:'fa-edit' },            
-                { id: 9, title: '下载app', path: '/', icon:'fa-download', hint:'优惠便捷'},            
-                { id: 10, title: '关注微信', path: '/', icon:'fa-wechat', hint:'随时沟通'},            
-                { id: 11, title: '生活服务', path: '/', icon:'fa-bell-o' },            
+                { id: 7, title: '发布房源', path: '/uhomes-video', icon:'fa-institution' },            
+                { id: 8, title: '公寓申请', path: '/apply', icon:'fa-edit' },            
+                { id: 9, title: '下载app', path: '/downloda', icon:'fa-download', hint:'优惠便捷'},            
+                { id: 10, title: '关注微信', path: '/wechat', icon:'fa-wechat', hint:'随时沟通'},            
+                { id: 11, title: '生活服务', path: '/life', icon:'fa-bell-o' },            
             ]
         }
     },
@@ -101,16 +125,14 @@ export default {
                 line-height: .266667rem;
                 font-size: .373333rem;
                 margin: 0 .666667rem;
-                a{
-                    color: #4e4d4d;
-                    i{
-                        padding-right: .266667rem;
-                    }
-                    .hint{
-                        font-size: .32rem;
-                        color: #a0a0a0;
-                        float: right;
-                    }
+                color: #4e4d4d;
+                i{
+                    padding-right: .266667rem;
+                }
+                .hint{
+                    font-size: .32rem;
+                    color: #a0a0a0;
+                    float: right;
                 }
             }
             .split-line{

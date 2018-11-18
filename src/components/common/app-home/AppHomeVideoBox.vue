@@ -1,8 +1,14 @@
 <template>
     <div class="hot-house"  v-show="housetitle.length">
         <div class="hot-house-title" >
-            <p class="hot-title">{{housetitle}}</p><a class="hot-more">更多<i class="fa fa-lg fa-angle-right"></i></a>
-            <!---->
+            <p class="hot-title">{{housetitle}}</p>
+            <router-link 
+                tag="a"
+                class="hot-more"
+                to="/uhomes-tv"
+            >
+                更多<i class="fa fa-lg fa-angle-right"></i>
+            </router-link>
         </div>
         <swiper class="swiper-container-house"  v-if = "billboards.length" :options="swiperOption" ref="mySwiper">
         
@@ -10,7 +16,7 @@
                     v-for = "item in billboards "  :key  = "item.index">
                     
                     <div>
-                        <img :src="item.logo" lazy="loaded"></img>
+                        <img :src="item.logo" lazy="loaded"/>
                         <span class="video-switch">
                         <i class="fa fa-lg fa-play"></i>
                         </span>
@@ -49,7 +55,6 @@
         }).then(result => {
             this.billboards = result[this.info].list
             this.housetitle = result[this.info].title
-            console.log(this.info)
         })
     },
 

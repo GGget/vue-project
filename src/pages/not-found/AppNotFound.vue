@@ -8,7 +8,11 @@
 
 <script>
 export default {
-    
+    props:['closeFooter'],
+    created() {
+        //这个界面需要footer 组件 所以修改为true
+        this.$emit('update:closeFooter', true)
+    },
 }
 </script>
 

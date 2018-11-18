@@ -2,12 +2,9 @@
   <div id="app">
       <app-header></app-header>
       <!-- <app-home></app-home> -->
+      <router-view :closeFooter.sync='isShow'></router-view>
       
-        
-          <router-view></router-view>
-        
-      
-      <app-footer></app-footer> 
+      <app-footer v-if="isShow"></app-footer> 
       <!-- <app-mq></app-mq> -->
   </div>
 </template>
@@ -18,6 +15,11 @@ import AppHeader from '@c/layout/AppHeader'
 import AppFooter from '@c/layout/AppFooter'
 
 export default {
+  data(){
+    return {
+      isShow:true
+    }
+  },
   name: 'app',
   components: {
     // AppHome,

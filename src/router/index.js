@@ -9,7 +9,26 @@ Vue.use(VueRouter)
 import AppHome from '@pages/home/AppHome'
 import AppBuyhouse from '@pages/buyhouse/AppBuyhouse'
 import AppNotFound from '@pages/not-found/AppNotFound'
+<<<<<<< HEAD
 import  AppApartments from '@pages/apartments/AppApartments'
+=======
+import AppOrder from '@pages/order/AppOrder'
+import AppFootmark from '@pages/footmark/AppFootmark'
+import AppUhomesTv from '@pages/uhomes-tv/AppUhomesTv'
+import AppUhomesVideo from '@pages/uhomes-video/AppUhomesVideo'
+
+import AppWealth from '@pages/wealth/AppWealth'
+    //二级路由
+    import AppBalance from '@c/common/app-wealth/AppBalance'
+    import AppVoucher from '@c/common/app-wealth/AppVoucher'
+    import AppGold from '@c/common/app-wealth/AppGold'
+
+
+import AppCollect from '@pages/collect/AppCollect'
+    //二级路由
+    import AppLike from '@c/common/app-collect/AppLike'
+    import AppComment from '@c/common/app-collect/AppComment'
+>>>>>>> f09fee855ecfede55234b316405c25080a20902d
 
 //路由表
 const routes = [
@@ -26,6 +45,59 @@ const routes = [
         path: '/buyhouse',
         name: 'buyhouse',
         component: AppBuyhouse
+    },
+    {
+        path: '/order',
+        name: 'order',
+        component: AppOrder
+    },
+    {
+        path: '/wealth',
+        name: 'wealth',
+        component: AppWealth,
+        redirect: {name: "balance"},
+        children: [
+			// 二级路由路径,不加/
+            {path:'balance', name:'balance', component:AppBalance},
+            {path:'voucher', name:'voucher', component:AppVoucher },
+            {path:'gold', name:'gold', component:AppGold },
+            // {path:'out', name:'out', component:AppGold },
+		]
+
+    },
+    {
+        path: '/footmark',
+        name: 'footmark',
+        component: AppFootmark
+    },
+    {
+        path: '/collect',
+        name: 'collect',
+        component: AppCollect,
+        redirect: {name: "like"},
+        children:[
+            {
+                path:'like', 
+                name:'like',
+                component:AppLike 
+            },
+            {
+                path:'comment', 
+                name:'comment',
+                component:AppComment
+            } 
+        ]
+    },
+    {
+        path: '/uhomes-tv',
+        name: 'uhomes-tv',
+        component: AppUhomesTv
+    },
+    {
+        path: '/uhomes-video/:id',
+        name: 'uhomes-video',
+        component: AppUhomesVideo,
+        // props: true
     },
     {   
         path:"/not-found",
@@ -47,7 +119,6 @@ const router = new VueRouter({
     mode: 'history',
     // base: '/app/',
     routes
-
 })
 
 export default router

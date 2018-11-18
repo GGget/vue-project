@@ -2,10 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 
 //引入全局通用样式
-import "@styles/main.scss"
+import "@styles/main.scss" 
 
-//引入移动端适配
-import '@libs/flexible'
 //引入各种插件
 import '@libs'
 
