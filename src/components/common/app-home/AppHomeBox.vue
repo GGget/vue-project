@@ -66,15 +66,11 @@
         }).then(result => {
             this.billboards = result[this.info].list
             this.housetitle = result[this.info].title
-<<<<<<< HEAD
-            // console.log(this.info)
-=======
             localStorage.setItem('home_data',result)
->>>>>>> f09fee855ecfede55234b316405c25080a20902d
         })
     },
     methods:{
-        idUrl(e){
+        idUrl(e){ 
             const _id=e.target.id
             // console.log(e.target.getAttribute("data_id"))
             this.$router.push({

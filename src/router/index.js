@@ -9,9 +9,7 @@ Vue.use(VueRouter)
 import AppHome from '@pages/home/AppHome'
 import AppBuyhouse from '@pages/buyhouse/AppBuyhouse'
 import AppNotFound from '@pages/not-found/AppNotFound'
-<<<<<<< HEAD
-import  AppApartments from '@pages/apartments/AppApartments'
-=======
+import AppApartments from '@pages/apartments/AppApartments'
 import AppOrder from '@pages/order/AppOrder'
 import AppFootmark from '@pages/footmark/AppFootmark'
 import AppUhomesTv from '@pages/uhomes-tv/AppUhomesTv'
@@ -28,7 +26,6 @@ import AppCollect from '@pages/collect/AppCollect'
     //二级路由
     import AppLike from '@c/common/app-collect/AppLike'
     import AppComment from '@c/common/app-collect/AppComment'
->>>>>>> f09fee855ecfede55234b316405c25080a20902d
 
 //路由表
 const routes = [
